@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cell3.0</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="backgroound.css">
+    </head>
+    <script>
+        function change_color(){
+            const color = 'rgb('+ Math.floor(Math.random()*255) + ',' + Math.floor(Math.random()*255) + ',' + Math.floor(Math.random()*255) + ')'
+            document.body.style.backgroundColor = color
+        }
+    </script>
+    <body>
+        <button class="click-me" onclick="change_color()">Click me!</button>
+    </body>
+</html>
