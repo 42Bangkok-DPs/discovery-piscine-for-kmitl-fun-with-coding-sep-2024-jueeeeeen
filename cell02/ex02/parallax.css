@@ -1,0 +1,31 @@
+body{
+    background-color: black;
+}
+
+.black-block{
+    min-height: 1500px;
+}
+
+.parallax {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1000px;
+    text-shadow: 5px 5px 10px black;
+    color: white;
+    font-size: 24px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax1 {
+    background-image: url("https://i.pinimg.com/originals/49/03/a3/4903a3afbb583f08ba69cfd96e87cf2b.gif");
+    min-height: 1000px;
+}
+
+.parallax2 {
+    background-image: url("https://i.pinimg.com/originals/79/a2/da/79a2daea48b8c41615da7abcb7c5f93c.gif");
+    min-height: 1000px;
+}
