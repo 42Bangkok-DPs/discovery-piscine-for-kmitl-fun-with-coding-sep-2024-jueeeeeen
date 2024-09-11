@@ -1,0 +1,13 @@
+.responsive_table{
+    border-collapse: collapse;
+    width: 80vw;
+    height: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.responsive_cell{
+    border: 1px solid black;
+    width: 80vw;
+    font-size: 5vw;
+}
