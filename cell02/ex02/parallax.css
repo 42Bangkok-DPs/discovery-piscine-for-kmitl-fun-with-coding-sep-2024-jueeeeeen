@@ -1,0 +1,31 @@
+body{
+    background-color: black;
+}
+
+.image-with-text{
+    width: 100%;
+}
+
+.image-container{
+    position: relative;
+    background-color: black;
+    width: 100vw;
+}
+
+.text-on-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 5px 5px 10px black;
+    font-size: 30px;
+}
+
+.black-block{
+    position: relative;
+    background-color: black;
+    width: 100vw;
+    height: 1200px;
+}
