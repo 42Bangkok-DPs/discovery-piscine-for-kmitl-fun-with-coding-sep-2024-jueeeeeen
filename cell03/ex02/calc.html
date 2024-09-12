@@ -35,13 +35,15 @@
             </div>
     </body>
     <script>
-        setInterval(please_use_me, 30000)
+        var use_me = setInterval(please_use_me, 30000)
         function calculate(){
-            const left = parseInt(document.getElementById("left-input").value, 10);
-            const right = parseInt(document.getElementById("right-input").value, 10);
+            clearInterval(use_me)
+            use_me = setInterval(please_use_me, 30000)
+            let left = Number(document.getElementById("left-input").value);
+            let right = Number(document.getElementById("right-input").value);
             const operator = document.getElementById("operator").value;
             let result
-            if ( (Number.isNaN(left) || Number.isNaN(right)) || left < 0 || right < 0){
+            if (left < 0 || right < 0 || !Number.isInteger(left) || !Number.isInteger(right)){
                 result = "Error :("
             }
             else if ((operator === '/' || operator == '%') && right == 0){
