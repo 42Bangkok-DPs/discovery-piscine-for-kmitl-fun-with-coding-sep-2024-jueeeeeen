@@ -41,29 +41,29 @@
             const right = parseInt(document.getElementById("right-input").value, 10);
             const operator = document.getElementById("operator").value;
             let result
-            if (left < 0 || right < 0 || (left !== 'number' || right !== 'number')){
+            if ( (Number.isNaN(left) || Number.isNaN(right)) || left < 0 || right < 0){
                 result = "Error :("
             }
-            else if ((operator == '/' || operator == '%') && (right == 0)){
+            else if ((operator === '/' || operator == '%') && right == 0){
                 result = "It's over 9000!"
             }
-            else if (operator == '+'){
+            else if (operator === '+'){
                 result = left + right
             }
-            else if (operator == '-'){
+            else if (operator === '-'){
                 result = left - right
             }
-            else if (operator == '*'){
+            else if (operator === '*'){
                 result = left * right
             }
-            else if (operator == '/'){
+            else if (operator === '/'){
                 result = left / right
             }
-            else if (operator == '%'){
+            else if (operator === '%'){
                 result = left % right
             }
-            alert(result)
             console.log(result)
+            alert(result)
         }
 
         function please_use_me(){
