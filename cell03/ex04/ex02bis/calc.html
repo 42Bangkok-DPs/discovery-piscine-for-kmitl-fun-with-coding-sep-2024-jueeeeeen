@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cell3.2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    input, select{
+        height: 40px;
+        border: 1px solid rgb(160, 160, 160);
+        border-radius: 20px;
+        text-align: center;
+        font-size: 22px;
+    }
+</style>
+<body>
+        <div>
+            <input type="text" id="left-input" value="0">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="text" id="right-input" value="0">
+            <input id="calculate-btn" type="submit" value="Try me!" id="try-me">
+        </div>
+</body>
+<script>
+    $(document).ready(function(){
+        function please_use_me() {
+            alert("Please, use me...");
+        }
+
+        var use_me = setInterval(please_use_me, 30000)
+
+        function calculate(){
+            clearInterval(use_me)
+            use_me = setInterval(please_use_me, 30000)
+
+            const left = Number($('#left-input').val());
+            const right = Number($('#right-input').val());
+            const operator = $('#operator').val();
+            
+            let result
+            if (left < 0 || right < 0 || !Number.isInteger(left) || !Number.isInteger(right)){
+                result = "Error :("
+            }
+            else if ((operator === '/' || operator == '%') && right == 0){
+                result = "It's over 9000!"
+            }
+            else if (operator === '+'){
+                result = left + right
+            }
+            else if (operator === '-'){
+                result = left - right
+            }
+            else if (operator === '*'){
+                result = left * right
+            }
+            else if (operator === '/'){
+                result = left / right
+            }
+            else if (operator === '%'){
+                result = left % right
+            }
+            console.log(result)
+            alert(result)
+        }
+        $('#calculate-btn').click(calculate);
+    });
+
+</script>
+</html>

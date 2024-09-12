@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cell3.1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <style>
+        body{
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .balloon{
+            background-color: red;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    
+    <body>
+        <div class="balloon" onmouseleave="leaves()"></div>
+    </body>
+
+    <script>
+        $(document).ready(function() {
+            let color = 0
+            let size = 200
+        
+            const colors = ['red', 'green', 'blue']
+
+            function change_color(){
+            color += 1
+            if (color >= 3){
+                color = 0
+            }
+            const balloon = document.querySelector('.balloon');
+            balloon.style.backgroundColor = colors[color]
+            }
+
+            function change_color_reversed(){
+            color -= 1
+            if (color < 0){
+                color = 2
+            }
+            const balloon = document.querySelector('.balloon');
+            balloon.style.backgroundColor = colors[color]
+            }
+            
+            function bigger(){
+                size += 10
+                if (size > 420){
+                    size = 200
+                }
+                const balloon = document.querySelector('.balloon');
+                balloon.style.width = size+'px'
+                balloon.style.height = size+'px'
+            }
+
+            function smaller(){
+                size -= 5
+                if (size <= 200){
+                    size = 200
+                }
+                const balloon = document.querySelector('.balloon');
+                balloon.style.width = size+'px'
+                balloon.style.height = size+'px'
+            }
+
+            function clicks(){
+                change_color();
+                bigger();
+            }
+
+            function leaves(){
+                change_color_reversed();
+                smaller();
+            }
+
+            $('.balloon').click(clicks)
+            $('.balloon').mouseleave(leaves)
+            
+        });
+    </script>
+</html>
