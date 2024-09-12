@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cell3.2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input, select{
+            height: 40px;
+            border: 1px solid rgb(160, 160, 160);
+            border-radius: 20px;
+            text-align: center;
+            font-size: 22px;
+        }
+    </style>
+    <body>
+            <div>
+                <input type="number" id="left-input" value="0">
+                <select id="operator">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                    <option value="%">%</option>
+                </select>
+                <input type="number" id="right-input" value="0">
+                <input type="submit" value="Try me!" id="try-me" onclick="calculate()">
+            </div>
+    </body>
+    <script>
+        setInterval(please_use_me, 30000)
+        function calculate(){
+            const left = parseInt(document.getElementById("left-input").value, 10);
+            const right = parseInt(document.getElementById("right-input").value, 10);
+            const operator = document.getElementById("operator").value;
+            let result
+            if (left < 0 || right < 0){
+                result = "Error :("
+            }
+            else if ((operator == '/' || operator == '%') && (right == 0)){
+                result = "It's over 9000!"
+            }
+            else if (operator == '+'){
+                result = left + right
+            }
+            else if (operator == '-'){
+                result = left - right
+            }
+            else if (operator == '*'){
+                result = left * right
+            }
+            else if (operator == '/'){
+                result = left / right
+            }
+            else if (operator == '%'){
+                result = left % right
+            }
+            alert(result)
+            console.log(result)
+        }
+
+        function please_use_me(){
+            alert("Please, use me...")
+        }
+
+    </script>
+</html>
