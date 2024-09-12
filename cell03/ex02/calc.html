@@ -22,7 +22,7 @@
     </style>
     <body>
             <div>
-                <input type="number" id="left-input" value="0">
+                <input type="text" id="left-input" value="0">
                 <select id="operator">
                     <option value="+">+</option>
                     <option value="-">-</option>
@@ -30,7 +30,7 @@
                     <option value="/">/</option>
                     <option value="%">%</option>
                 </select>
-                <input type="number" id="right-input" value="0">
+                <input type="text" id="right-input" value="0">
                 <input type="submit" value="Try me!" id="try-me" onclick="calculate()">
             </div>
     </body>
@@ -41,7 +41,7 @@
             const right = parseInt(document.getElementById("right-input").value, 10);
             const operator = document.getElementById("operator").value;
             let result
-            if (left < 0 || right < 0){
+            if (left < 0 || right < 0 || (left !== 'number' || right !== 'number')){
                 result = "Error :("
             }
             else if ((operator == '/' || operator == '%') && (right == 0)){
