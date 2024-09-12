@@ -27,7 +27,7 @@ function set_cookie(){
     }
     todos_str = todos_str.slice(0, -1);
     const date = new Date();
-    date.setTime(date.getTime() + 1000 * 60 * 10);
+    date.setTime(date.getTime() + 1000 * 60 * 5);
 
     document.cookie = "todos=" + encodeURIComponent(todos_str) + "; expires=" + date.toUTCString() + "; path=/";
 }
