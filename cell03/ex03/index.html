@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cell3.3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .to-do-container{
+            width: 300px;
+        }
+
+        .to-do-header{
+            text-align: center;
+            background-color: rgb(255, 195, 225);
+            height: 30px;
+            vertical-align: middle;
+            line-height: 30px;
+        }
+
+        .to-do-content{
+            border: 1px solid gray;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .new-btn{
+            background-color: rgb(255, 255, 255);
+            border: 1px solid gray;
+            border-radius: 5px;
+            width: 100%;
+            height: 30px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: rgb(142, 142, 142);
+
+            &:hover{
+                cursor: pointer;
+                background-color: rgb(201, 201, 201);
+                color: rgb(255, 255, 255);
+                border: 1px solid rgb(201, 201, 201);
+            }
+        }
+
+        .centered{
+            display:inline-block;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+    </style>
+    <body>
+        <div class="centered">
+            <button class="new-btn" onclick="create_to_do()">New</button>
+            <div class="to-do-header">TO DO</div>
+            <div id="ft_list" class="to-do-container"></div>
+        </div>
+    </body>
+    <script src="todo.js"></script>
+</html>
