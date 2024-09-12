@@ -26,14 +26,14 @@ $(document).ready(function() {
         let todos_str = "";
 
         todos.each(function() {
-            todos_str += $(this).text() + "-";
+            todos_str += encodeURIComponent($(this).text()) + "|";
         });
 
         todos_str = todos_str.slice(0, -1);
         const date = new Date();
         date.setTime(date.getTime() + 1000 * 60 * 5);
     
-        document.cookie = "todos=" + encodeURIComponent(todos_str) + "; expires=" + date.toUTCString() + "; path=/";
+        document.cookie = "todos=" + todos_str + "; expires=" + date.toUTCString() + "; path=/";
     }
     
     function delete_to_do(todo_element){
@@ -46,7 +46,8 @@ $(document).ready(function() {
     function get_cookie(){
         let cookies = document.cookie.split(';')[0].split('=')[1]
         if (!cookies) return null;
-        return decodeURIComponent(cookies).split('-');
+        cookies = cookies.split('|')
+        return cookies;
     }
     
     function retrieve_todos(){
@@ -54,7 +55,7 @@ $(document).ready(function() {
         if (!todos) return
         todos.reverse().forEach(todo => {
             if (todo.trim()) {
-                add_to_do(todo);
+                add_to_do(decodeURIComponent(todo));
             }
         });
     }
